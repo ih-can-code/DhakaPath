@@ -431,3 +431,7 @@ button.cell:active, a.cell:active { background: var(--fill-2); }
 .lf-hub.on { fill: #fff; stroke: var(--accent); stroke-width: 3; }
 .lf-hub.ends { fill-opacity: 0; stroke-opacity: 0; }
 .lf-hub.slow { stroke: var(--orange-solid); } .lf-hub.bad { stroke: var(--red-solid); }
+
+/* dropdown lists: Windows draws options on their own surface, so give them solid themed colours (dark mode contrast) */
+select option, select optgroup { background-color: var(--solid); color: var(--ink); }
+select option:checked { background-color: var(--accent); color: var(--on-accent); }
