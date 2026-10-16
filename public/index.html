@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DhakaPath</title>
+<meta name="description" content="Bus, metro, leguna and rickshaw routes for Dhaka with honest fares, live street alerts and an assistant that speaks Banglish.">
+<meta name="theme-color" content="#f2f2f7">
+<script>
+  // apply the saved theme before first paint (default is light)
+  try { var t = localStorage.getItem('dp_theme2') || 'light'; if (t !== 'auto') document.documentElement.dataset.theme = t; } catch (e) { document.documentElement.dataset.theme = 'light'; }
+</script>
+<link rel="stylesheet" href="/vendor/tabler/tabler-icons.min.css">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="map" class="map" role="region" aria-label="Map of Dhaka"></div>
+<div id="mapov" class="mapov"></div>
+<aside id="card" class="card" aria-label="DhakaPath">
+  <div class="grab" id="grab" aria-hidden="true"><span></span></div>
+  <header class="top" id="top"></header>
+  <main id="view" class="view" tabindex="-1"></main>
+</aside>
+<div id="wiFloat" class="wi-float"></div>
+<div id="tour" class="tour" hidden></div>
+<div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/js/core.js"></script>
+<script src="/js/map.js"></script>
+<script src="/js/go.js"></script>
+<script src="/js/pages.js"></script>
+<script src="/js/tour.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
