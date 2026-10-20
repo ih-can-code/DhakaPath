@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DhakaPath</title>
+<meta name="description" content="Bus, metro, leguna and rickshaw routes for Dhaka with honest fares, live street alerts and an assistant that speaks Banglish.">
+<meta name="theme-color" content="#f2f2f7">
+<script>
+  // apply the saved theme before first paint (default is light). Themes: light, mint, dark, midnight, auto.
+  (function () {
+    var dark = { dark: 1, midnight: 1 }, ok = { light: 1, mint: 1, dark: 1, midnight: 1, auto: 1 }, t = 'light';
+    try { t = localStorage.getItem('dp_theme2') || 'light'; } catch (e) { /* private mode */ }
+    if (!ok[t]) t = 'light';
+    var scheme = dark[t] ? 'dark' : t === 'auto' ? (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : 'light';
+    document.documentElement.dataset.theme = t;
+    document.documentElement.dataset.scheme = scheme;
+  })();
+</script>
+<link rel="stylesheet" href="/vendor/tabler/tabler-icons.min.css">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="map" class="map" role="region" aria-label="Map of Dhaka"></div>
+<div id="mapov" class="mapov"></div>
+<aside id="card" class="card" aria-label="DhakaPath">
+  <div class="grab" id="grab" aria-hidden="true"><span></span></div>
+  <header class="top" id="top"></header>
+  <main id="view" class="view" tabindex="-1"></main>
+</aside>
+<div id="wiFloat" class="wi-float"></div>
+<div id="themeMenu" class="theme-menu" role="dialog" aria-label="Choose a theme" hidden></div>
+<div id="tour" class="tour" hidden></div>
+<div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/js/core.js"></script>
+<script src="/js/map.js"></script>
+<script src="/js/go.js"></script>
+<script src="/js/pages.js"></script>
+<script src="/js/tour.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

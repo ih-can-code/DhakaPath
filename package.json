@@ -1,0 +1,14 @@
+{
+  "name": "dhakapath",
+  "version": "1.1.0",
+  "description": "DhakaPath: live urban transit and route intelligence for Dhaka (INIF 2026 hackathon)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/smoke.js && node test/api.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
